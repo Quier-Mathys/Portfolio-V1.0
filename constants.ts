@@ -102,6 +102,7 @@ sondern auch angenehm zu bedienen sind.`,
 
 // NOTE TO USER: Place your images in a 'public/images' folder in your project root.
 // Example: public/images/my-project.png
+// NOTE: Using relative paths (./images/) for better compatibility with hosting.
 export const PROJECTS: Project[] = [
   {
     id: 1,
@@ -115,7 +116,7 @@ export const PROJECTS: Project[] = [
         cn: "具有NFT设计的超快速在线销售平台。"
     },
     tags: ["React", "Three.js", "Tailwind"],
-    imageUrl: "/images/project1.png", // Placeholder for local image
+    imageUrl: "./images/project1.png", 
     link: "#"
   },
   {
@@ -130,7 +131,7 @@ export const PROJECTS: Project[] = [
         cn: "由Gemini AI辅助实时可视化复杂数据的仪表板。"
     },
     tags: ["TypeScript", "D3.js", "Gemini API"],
-    imageUrl: "/images/project2.png", // Placeholder for local image
+    imageUrl: "./images/project2.png", 
     link: "#"
   },
   {
@@ -145,7 +146,7 @@ export const PROJECTS: Project[] = [
         cn: "具有智能警报的实时加密货币跟踪。"
     },
     tags: ["WebSocket", "Chart.js", "Firebase"],
-    imageUrl: "/images/project4.png", // Placeholder for local image
+    imageUrl: "./images/project4.png", 
     link: "#"
   }
 ];
@@ -275,7 +276,7 @@ export const INVENTIONS: Invention[] = [
         jp: "フロントエンドおよびUI/UX開発スキルを実証する没入型デジタルショーケース。このサイトは、React、Three.js、Gemini AIを組み合わせています。",
         cn: "展示我的前端和UI/UX开发技能的沉浸式数字展示柜。该网站结合了React、Three.js和Gemini AI，创造独特的交互式体验。"
     },
-    image: '/images/lab1.png', // Placeholder for local image
+    image: './images/lab1.png',
     techStack: ['React', 'TypeScript', 'Tailwind', 'Gemini API'],
     features: [
         { fr: 'Interface Réactive & 3D', en: 'Responsive & 3D Interface', es: 'Interfaz Responsiva y 3D', de: 'Responsive & 3D-Schnittstelle', jp: 'レスポンシブ＆3Dインターフェース', cn: '响应式和3D界面' },
@@ -296,7 +297,7 @@ export const INVENTIONS: Invention[] = [
         jp: '明日のウェブのための拡張現実ユーザーインターフェースの探求。グラスモーフィズムとジェスチャーインタラクションに焦点を当てています。',
         cn: '探索面向未来的增强现实网络用户界面。专注于玻璃拟态和手势交互。'
     },
-    image: '/images/lab2.png', // Placeholder for local image
+    image: './images/lab2.png',
     techStack: ['CSS Houdini', 'Framer Motion', 'WebGL'],
     features: [
         { fr: 'Composants Glassmorphism', en: 'Glassmorphism Components', es: 'Componentes Glassmorphism', de: 'Glassmorphismus-Komponenten', jp: 'グラスモーフィズムコンポーネント', cn: '玻璃拟态组件' },
@@ -317,7 +318,7 @@ export const INVENTIONS: Invention[] = [
         jp: 'Raspberry Piを使用して、すべてのホームオートメーションプロトコル（Zigbee、Z-Wave、WiFi）を単一のインターフェースに統合する安全なIoTゲートウェイ。',
         cn: '使用Raspberry Pi的安全IoT网关，将所有家庭自动化协议（Zigbee、Z-Wave、WiFi）统一到一个接口中。'
     },
-    image: '/images/lab3.png', // Placeholder for local image
+    image: './images/lab3.png',
     techStack: ['Python', 'MQTT', 'Raspberry Pi'],
     features: [
         { fr: 'Chiffrement E2E', en: 'E2E Encryption', es: 'Cifrado E2E', de: 'E2E-Verschlüsselung', jp: 'E2E暗号化', cn: '端到端加密' },

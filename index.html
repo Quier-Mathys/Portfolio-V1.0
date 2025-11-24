@@ -84,12 +84,16 @@
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body class="transition-colors duration-300 dark:bg-slate-950 bg-slate-50 dark:text-slate-200 text-slate-800">
     <div id="root"></div>
+    <!-- CRUCIAL: Entry point for Vite/React -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

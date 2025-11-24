@@ -1,11 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 import { PORTFOLIO_OWNER, PROJECTS, SKILLS, ABOUT_TEXT, EDUCATION } from '../constants';
 
-// Initialize the Gemini client
-// NOTE: In a real production app, you would likely proxy this through a backend 
-// to protect the API key, or use limited-scope keys.
-// For this demo, we assume the key is in process.env.API_KEY
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize the Gemini client safe check
+// In production (static hosting), process.env might be undefined or empty.
+// We use a safe check to prevent the entire app from crashing with a white/black screen.
+let ai: GoogleGenAI | null = null;
+
+try {
+    if (process && process.env && process.env.API_KEY) {
+        ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    }
+} catch (e) {
+    console.warn("Gemini API Key not found. AI Chat will be disabled.");
+}
 
 const SYSTEM_INSTRUCTION = `
 Tu es l'assistant IA personnel pour le portfolio de ${PORTFOLIO_OWNER}.
@@ -31,6 +38,10 @@ Instructions de style :
 `;
 
 export const sendMessageToGemini = async (message: string): Promise<string> => {
+  if (!ai) {
+      return "Désolé, la clé d'API n'est pas configurée. Je ne peux pas répondre pour le moment.";
+  }
+  
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
