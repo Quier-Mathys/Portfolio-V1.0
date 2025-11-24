@@ -7,11 +7,14 @@ import { PORTFOLIO_OWNER, PROJECTS, SKILLS, ABOUT_TEXT, EDUCATION } from '../con
 let ai: GoogleGenAI | null = null;
 
 try {
-    if (process && process.env && process.env.API_KEY) {
+    // FIX: Check typeof process first to avoid ReferenceError in browser environments
+    // @ts-ignore
+    if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+        // @ts-ignore
         ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     }
 } catch (e) {
-    console.warn("Gemini API Key not found. AI Chat will be disabled.");
+    console.warn("Gemini API Key not found or process undefined. AI Chat will be disabled.", e);
 }
 
 const SYSTEM_INSTRUCTION = `
